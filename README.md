@@ -26,7 +26,6 @@ Discord has a limit of 25 options in slash commands, so DNS over Discord offers 
 
 <details>
 <summary>Supported DNS record types</summary>
-<div>
 
 * `A`
 * `AAAA`
@@ -54,7 +53,6 @@ Discord has a limit of 25 options in slash commands, so DNS over Discord offers 
 * `TXT`
 * `URI`
 
-</div>
 </details>
 
 To query other DNS record types, or multiple record types at once, use the `/multi-dig` command.
@@ -73,7 +71,7 @@ Example:
 
 ### Disable DNSSEC checking
 
-You can disable DNSSEC checking in the `dig` command by passing `cdflag` as true. This will get the records even if validation fails.
+You can disable DNSSEC checking in the `dig` command by passing `cdflag` as true. This will return the DNS records even if the DNSSEC validation fails.
 
 Example:
 
@@ -87,11 +85,7 @@ You can refresh the DNS lookup results by clicking the Refresh button. Clicking 
 
 The refresh button is available on all responses to the `/dig` command, including those that resulted in an error, such as an unknown domain or no records found.
 
-<div class="medium-img">
-
 ![Refreshing dig domain: cloudflare.com](assets/commands/dig-command-refresh.gif)
-
-</div>
 
 ### Changing DNS provider
 
@@ -99,7 +93,6 @@ By default, the DNS over Discord bot uses Cloudflare's 1.1.1.1 DNS service. You 
 
 <details>
 <summary>Supported DNS providers</summary>
-<div>
 
 * [1.1.1.1 (Cloudflare)](https://developers.cloudflare.com/1.1.1.1/)
 * [1.1.1.2 (Cloudflare Malware Blocking)](https://developers.cloudflare.com/1.1.1.1/setup/#1111-for-families)
@@ -107,14 +100,9 @@ By default, the DNS over Discord bot uses Cloudflare's 1.1.1.1 DNS service. You 
 * [8.8.8.8 (Google)](https://developers.google.com/speed/public-dns)
 * [9.9.9.9 (Quad9)](https://www.quad9.net/)
 
-</div>
 </details>
 
-<div class="medium-img">
-
 ![Changing DNS provider (1.1.1.1 -> 8.8.8.8) for dig domain: cloudflare.com](assets/commands/dig-command-provider.gif)
-
-</div>
 
 ## `multi-dig` command
 
@@ -132,7 +120,6 @@ When providing DNS record types for the `/multi-dig` command, Discord will not p
 
 <details>
 <summary>DNS record types supported and considered valid by the bot</summary>
-<div>
 
 Use a `*` (asterisk) in place of a record type to get DNS results for all supported types.
 
@@ -182,7 +169,6 @@ Use a `*` (asterisk) in place of a record type to get DNS results for all suppor
 * `URI`
 * `ZONEMD`
 
-</div>
 </details>
 
 ### Short form response
@@ -197,7 +183,7 @@ Example:
 
 ### Disable DNSSEC checking
 
-Exactly like `dig` command, you can disable dns checking by passing `cdflag` as true. This will get the records even if validation fails.
+As with the `dig` command, you can disable DNSSEC checking by passing `cdflag` as true. This will return the DNS records even if the DNSSEC validation fails.
 
 Example:
 
@@ -211,11 +197,7 @@ The `/multi-dig` command also provides a refresh button below each set of DNS re
 
 As with the `/dig` command, any user can press the refresh button to refresh the displayed DNS results, including for DNS queries that had previously failed.
 
-<div class="medium-img">
-
 ![Refreshing multi-dig domain: cloudflare.com types: A AAAA](assets/commands/multi-dig-command-refresh.gif)
-
-</div>
 
 ### Changing DNS provider
 
@@ -225,7 +207,6 @@ This menu can be used be any user to change the DNS provider used for the lookup
 
 <details>
 <summary>Supported DNS providers</summary>
-<div>
 
 * [1.1.1.1 (Cloudflare)](https://developers.cloudflare.com/1.1.1.1/)
 * [1.1.1.2 (Cloudflare Malware Blocking)](https://developers.cloudflare.com/1.1.1.1/setup/#1111-for-families)
@@ -233,14 +214,9 @@ This menu can be used be any user to change the DNS provider used for the lookup
 * [8.8.8.8 (Google)](https://developers.google.com/speed/public-dns)
 * [9.9.9.9 (Quad9)](https://www.quad9.net/)
 
-</div>
 </details>
 
-<div class="medium-img">
-
 ![Changing DNS provider (1.1.1.1 -> 8.8.8.8) for multi-dig domain: cloudflare.com types: A AAAA](assets/commands/multi-dig-command-provider.gif)
-
-</div>
 
 ## `whois` command
 
@@ -313,6 +289,8 @@ The bot can also be added to accounts with [https://dns-over-discord.v4.wtf/invi
 # When in Cloudflare docs:
 
 - Use `https://cfl.re/3nM6VfQ` instead of `https://dns-over-discord.v4.wtf/invite`
+- Use `{{<details header="xyz">}}` instead of `<details><summary>xyz</summary>`
+- Use `{{</details>}}` instead of `</details>`
 - Remove all images
 - Remove alternate DNS provider details
 - Include development foot note as below:
